@@ -1,0 +1,6 @@
+﻿  MusicVisualizer.cpp
+  Source.cpp
+  Visualizer.cpp
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  FmodMusicVisualizer.vcxproj -> C:\Users\prath\OneDrive\Documents\Visual Studio 2019\Projects\FmodMusicVisualizer\Debug\FmodMusicVisualizer.exe
