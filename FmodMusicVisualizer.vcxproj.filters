@@ -15,13 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MusicVisualizer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Visualizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,6 +32,8 @@
     <None Include="fmod.dll" />
     <None Include="fmodL.dll" />
     <None Include="glew32.dll" />
+    <None Include="ShaderVertex.glsl" />
+    <None Include="ShaderFragment.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Visualizer.h">
@@ -41,6 +46,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MusicManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

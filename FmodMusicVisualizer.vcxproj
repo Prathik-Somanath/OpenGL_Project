@@ -154,19 +154,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="MusicVisualizer.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Visualizer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fmod.dll" />
     <None Include="fmodL.dll" />
     <None Include="glew32.dll" />
+    <None Include="ShaderFragment.glsl" />
+    <None Include="ShaderVertex.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MusicManager.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="stb_image.h" />
     <ClInclude Include="Visualizer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

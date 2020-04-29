@@ -54,11 +54,36 @@ void Visualizer::run() {
 		exit(-1);
 	}
 
+	//printf("OpenGL version supported by this platform (%s): \n", glGetString(GL_VERSION));	
+
+	Shader shader = Shader("ShaderVertex.glsl", "ShaderFragment.glsl");
+
+	// create meshes
+	GLint barNum = 10;
+	Mesh* meshes = new Mesh[barNum];
+
+	for (GLint idx = 0; idx < barNum; idx++) {
+		meshes[idx].setVertices(idx, barNum); // set x coordinate
+		meshes[idx].setupMesh();
+		meshes[idx].loadTexture("blue.jfif");
+	}
 
 	while (!glfwWindowShouldClose(window))
 	{
 		// input
 		processInput(window);
+
+		// render
+		glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		shader.use();
+
+		for (GLint i = 0; i < barNum; i++) {
+			GLfloat yCoordinate = 1;
+			GLfloat corr = yCoordinate; //* pow(2, i);
+			meshes[i].draw(shader, corr);
+		}
 
 		// glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 		glfwSwapBuffers(window);
