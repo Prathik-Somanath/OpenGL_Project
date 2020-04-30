@@ -56,7 +56,7 @@ void Visualizer::run() {
 
 	//printf("OpenGL version supported by this platform (%s): \n", glGetString(GL_VERSION));	
 
-	Shader shader = Shader("ShaderVertex.glsl", "ShaderFragment.glsl");
+	Shader shader = Shader("Shaders/ShaderVertex.glsl", "Shaders/ShaderFragment.glsl");
 
 	// create meshes
 	GLint barNum = 10;
@@ -65,23 +65,40 @@ void Visualizer::run() {
 	for (GLint idx = 0; idx < barNum; idx++) {
 		meshes[idx].setVertices(idx, barNum); // set x coordinate
 		meshes[idx].setupMesh();
-		meshes[idx].loadTexture("blue.jfif");
+		meshes[idx].loadTexture("Media/blue.jfif");
 	}
+
+	MusicManager player;
+	player.loadMusic("Media/Swedish House Mafia - Don t You Worry Child.mp3");
+	player.playMusic();
+
+	// initialize spectrum
+	int size = player.initSpectrum(12);
+	float* frequencies = new float[size]();
+
 
 	while (!glfwWindowShouldClose(window))
 	{
 		// input
 		processInput(window);
 
+		// get frequency
+		player.getFrequency(frequencies);
+
+		GLfloat red = 0.02f + (frequencies[1] * 0.9f);
+		GLfloat green = 0.4f + (frequencies[1] * 0.2f);
+		GLfloat blue = 0.639f + (frequencies[1] * 0.1f);
+
+
 		// render
-		glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+		glClearColor(red, green, blue, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		shader.use();
 
 		for (GLint i = 0; i < barNum; i++) {
-			GLfloat yCoordinate = 1;
-			GLfloat corr = yCoordinate; //* pow(2, i);
+			GLfloat yCoordinate = frequencies[i];
+			GLfloat corr = yCoordinate * pow(2, i);
 			meshes[i].draw(shader, corr);
 		}
 

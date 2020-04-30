@@ -155,6 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MusicManager.cpp" />
     <ClCompile Include="MusicVisualizer.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Visualizer.cpp" />
@@ -163,8 +164,8 @@
     <None Include="fmod.dll" />
     <None Include="fmodL.dll" />
     <None Include="glew32.dll" />
-    <None Include="ShaderFragment.glsl" />
-    <None Include="ShaderVertex.glsl" />
+    <None Include="Shaders\ShaderFragment.glsl" />
+    <None Include="Shaders\ShaderVertex.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Mesh.h" />
@@ -172,6 +173,12 @@
     <ClInclude Include="Shader.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="Visualizer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Media\blue.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Media\Swedish House Mafia - Don t You Worry Child.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

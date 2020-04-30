@@ -27,13 +27,16 @@
     <ClCompile Include="Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MusicManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="fmod.dll" />
     <None Include="fmodL.dll" />
     <None Include="glew32.dll" />
-    <None Include="ShaderVertex.glsl" />
-    <None Include="ShaderFragment.glsl" />
+    <None Include="Shaders\ShaderFragment.glsl" />
+    <None Include="Shaders\ShaderVertex.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Visualizer.h">
@@ -51,5 +54,11 @@
     <ClInclude Include="stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Media\blue.jfif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Media\Swedish House Mafia - Don t You Worry Child.mp3" />
   </ItemGroup>
 </Project>
